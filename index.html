@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THOUGHTWORKS PROJECTS - PATNAM PRUDVINATH</title>
+  <link rel="shortcut icon" href="prudvi-professional.png" type="image/x-icon">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-sizing: border-box;
+    }
+
+    .main-container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      background: linear-gradient(210deg, red, black 24%);
+    }
+
+    .image-container {
+      width: 50%;
+      height: 100%;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .description {
+      color: white;
+      width: 50%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .description h1 {
+      font-size: clamp(3rem, 6rem, 5vw);
+      color: red;
+      height: 10%;
+      text-decoration: underline;
+    }
+
+    .description p {
+      font-size: clamp(.73rem, 1.5rem, 3vw);
+      text-align: center;
+      height: 40%;
+    }
+
+    .description button {
+      font-size: 1.3rem;
+      padding: .76em;
+      color: red;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .description button:hover {
+      color: black;
+    }
+
+    .project-container {
+      width: 100%;
+      background-color: rgb(40, 40, 40);
+      height: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: red;
+      padding-block: 20px;
+      font-size: clamp(1rem, 5rem, 3vw);
+      text-decoration: underline;
+    }
+
+    .project-container ul {
+      display: flex;
+      color: white;
+      gap: 20px;
+      font-size: 1.4rem;
+      padding-inline: 20px;
+      justify-content: space-around;
+      padding-block: 40px;
+      margin-inline: 20px;
+      border-bottom: 2px solid white;
+    }
+
+    .project-container ul li {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    .active {
+      color: rgba(250, 67, 67, 0.84);
+      border-bottom: 3px solid rgba(250, 67, 67, 0.84);
+    }
+
+    .projects,
+    .real-time {
+      min-height: 50vh;
+    }
+
+    .real-time {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nowork {
+      color: white;
+    }
+
+    .projects {
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      justify-self: center;
+      padding-block: 30px;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .project {
+      width: 400px;
+      max-width: 50%;
+      height: 380px;
+      background-color: gray;
+      border: 1.5px solid white;
+      border-radius: 5px;
+      background: linear-gradient(210deg, red, black 44%);
+    }
+
+    .project h3 {
+      text-align: center;
+      padding-block: 10px;
+      color: white;
+      font-size: 1.5rem;
+      height: 10%;
+      text-decoration: underline;
+      margin-top: 10px;
+    }
+
+    .project p {
+      width: 100%;
+      font-size: 1.2rem;
+      height: 55%;
+      text-align: center;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      height: 30%;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    .links button {
+      width: 170px;
+      padding: .45em .2em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: red;
+      background-color: white;
+      font-size: 1em;
+    }
+
+    .links button:hover {
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="image-container">
+      <img src="prudvi-professional.png" alt="my-profile-photo">
+    </div>
+    <div class="description">
+      <h1>Patnam Prudvinath</h1>
+      <p>Hi! This is Prudvi, You can access my Thoughworks Projects and Real time scenories here...</p>
+      <a href="https://prudvinath16.github.io/MY-PORTFOLIO"><button>VISIT MY - PORTFOLIO</button></a>
+    </div>
+  </div>
+  <div class="project-container">
+    <h2>MY CRAFTS AT THOUGHTWORKS</h2>
+    <div class="nav">
+      <ul>
+        <li class="projects-link active">PROJECTS</li>
+        <li class="real-time-link">REAL TIME SCENARIOS</li>
+      </ul>
+    </div>
+    <div class="projects">
+      <div class="project">
+        <h3 class="project-title">DATA TABLE</h3>
+        <p class="description">In this project i created Table UI for Numerous data of books with SORT, SEARCH and
+          PAGINATION Funcationality...</p>
+        <div class="links">
+          <a href="offline/mini-project(data-table)/"><button>Link To Live Site</button></a>
+          <a href="https://github.com/PRUDVINATH16/Thoughtworks/tree/main/offline/mini-project(data-table)"><button>Link
+              To Source Code</button></a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3 class="project-title">TASK FLOW - LANDING PAGE</h3>
+        <p class="description">In this project i created Landing Page for Task-Flow a Task Management App.
+          Here i expose my CSS skills - responsiveness, graidients...
+        </p>
+        <div class="links">
+          <a href="online/mini-project/"><button>Link To Live Site</button></a>
+          <a href="https://github.com/PRUDVINATH16/Thoughtworks/tree/main/online/mini-project"><button>Link
+              To Source Code</button></a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3 class="project-title">TODO APP</h3>
+        <p class="description">In this project i created Todo app with add and delete and with permemnant storage..
+        </p>
+        <div class="links">
+          <a href="offline/storage/todo-app.html"><button>Link To Live Site</button></a>
+          <a href="https://github.com/PRUDVINATH16/Thoughtworks/blob/main/offline/storage/todo-app.html"><button>Link
+              To Source Code</button></a>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3 class="project-title">COUNTER APP</h3>
+        <p class="description">In this project i created COUNTER app with increment and decrement and with permemnant storage..
+        </p>
+        <div class="links">
+          <a href="offline/storage/counter-app.html"><button>Link To Live Site</button></a>
+          <a href="https://github.com/PRUDVINATH16/Thoughtworks/blob/main/offline/storage/counter-app.html"><button>Link
+              To Source Code</button></a>
+        </div>
+      </div>
+
+      
+
+    </div>
+    <div class="real-time" style="display: none;">
+      <h2 class="nowork">NO WORKS YET!!</h2>
+    </div>
+  </div>
+  <div class="real-time" style="display: none;">
+    <h2 class="nowork">NO WORKS YET!!</h2>
+  </div>
+  </div>
+
+  <script>
+
+    const real_link = document.querySelector('.real-time-link');
+    const pro_link = document.querySelector('.projects-link');
+    const real_div = document.querySelector('.real-time');
+    const projects_div = document.querySelector('.projects');
+
+    real_link.addEventListener('click', () => {
+      pro_link.classList.remove('active');
+      real_link.classList.add('active');
+
+      real_div.style.display = "flex";
+      projects_div.style.display = "none";
+    });
+
+    pro_link.addEventListener('click', () => {
+      pro_link.classList.add('active');
+      real_link.classList.remove('active');
+
+      real_div.style.display = "none";
+      projects_div.style.display = "flex";
+    });
+
+  </script>
+</body>
+
+</html>

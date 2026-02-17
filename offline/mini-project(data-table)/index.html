@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOOKS DATA TABLE</title>
+
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <h1>Books Data Table With SORT, PAGINATION...</h1>
+  <div class="page-description search-container">
+    <h2 class="page-number"></h2>
+    <div class="search-div select-wrapper">
+      <input type="text" class="input-search">
+      <select name="" id="">
+        <option value="title">Title</option>
+        <option value="authors">Authors</option>
+        <option value="categories">Categories</option>
+      </select>
+    </div>
+  </div>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Title
+          </th>
+          <th>
+            ISBN
+          </th>
+          <th>
+            No.of Pages
+          </th>
+          <th>
+            Published Date
+          </th>
+          <th>
+            Price
+          </th>
+          <th>
+            Discount
+          </th>
+          <th>
+            Status
+          </th>
+          <th>
+            Authors
+          </th>
+          <th>
+            Categories
+          </th>
+          <th>
+            Thumnail URL
+          </th>
+          <th>
+            Short Description
+          </th>
+          <th>
+            Long Description
+          </th>
+        </tr>
+      </thead>
+
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="pagenation-container">
+    <button class="btn-prev" disabled>Previous Page</button>
+    <div class="numbers">
+      <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>...</span>
+    </div>
+    <button class="btn-next">Next Page</button>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
