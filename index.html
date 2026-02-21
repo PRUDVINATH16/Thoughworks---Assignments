@@ -96,7 +96,16 @@
       justify-content: space-around;
       padding-block: 40px;
       margin-inline: 20px;
-      border-bottom: 2px solid white;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.564);
+    }
+
+    .spray {
+      width: 97%;
+      height: 1px;
+      box-shadow: 0 0 30px 8px rgba(255, 255, 255, 0.653);
+      display: flex;
+      background-color: rgba(255, 255, 255, 0.571);
+      justify-self: center;
     }
 
     .project-container ul li {
@@ -143,6 +152,11 @@
       border: 1.5px solid white;
       border-radius: 5px;
       background: linear-gradient(210deg, red, black 44%);
+      transition: all 3s;
+    }
+
+    .project:hover {
+      transform: rotate(-3deg) scale(1.2);
     }
 
     .project h3 {
@@ -205,6 +219,7 @@
         <li class="projects-link active">PROJECTS</li>
         <li class="real-time-link">REAL TIME SCENARIOS</li>
       </ul>
+      <div class="spray"></div>
     </div>
     <div class="projects">
       <div class="project">

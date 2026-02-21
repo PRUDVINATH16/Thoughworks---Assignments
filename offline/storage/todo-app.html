@@ -7,7 +7,6 @@
   <title>TODO</title>
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -57,11 +56,12 @@
       outline: 5px solid rgba(172, 172, 231, 0.833);
     }
 
-    .input-section input::placeholder{
+    .input-section input::placeholder {
       color: blue;
     }
 
-    .input-section button, li  button {
+    .input-section button,
+    li button {
       width: 20%;
       height: 100%;
       font-size: 1.8rem;
@@ -71,7 +71,8 @@
       border: 1.3px solid blue;
     }
 
-    .input-section button:hover, li  button:hover {
+    .input-section button:hover,
+    li button:hover {
       outline: 5px solid rgba(172, 172, 231, 0.833);
     }
 
@@ -99,11 +100,12 @@
     li input[type="checkbox"] {
       width: 40px;
       height: 40px;
-      accent-color: rgb(16, 2, 99);
+      accent-color: rgb(125, 104, 242);
     }
 
-    li input[type="checkbox"]:checked + span {
-      text-decoration:line-through;
+    li input[type="checkbox"]:checked+span {
+      text-decoration: line-through;
+      text-decoration-color: rgb(125, 104, 242);
     }
 
     li span {
@@ -114,6 +116,86 @@
       text-transform: uppercase;
     }
 
+    .no-todos {
+      text-align: center;
+      font-family: 'Lucida Sans';
+      font-size: 2rem;
+      color: blue;
+      font-weight: 600;
+    }
+
+    .block {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 768px) {
+
+      h2 {
+        font-size: 1.8rem;
+      }
+
+      .main-container {
+        width: 95%;
+        padding: 10px;
+      }
+
+      .main-container .input-section {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        position: static;
+      }
+
+      .input-section input {
+        width: 100%;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+
+      .input-section button {
+        width: 100%;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+
+      ul {
+        margin-block: 20px;
+      }
+
+      li {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px;
+        gap: 10px;
+        font-size: 1.2rem;
+      }
+
+      li span {
+        width: 100%;
+        height: auto;
+      }
+
+      li input[type="checkbox"] {
+        width: 25px;
+        height: 25px;
+        display: inline;
+      }
+
+      li button {
+        width: 100%;
+        height: 45px;
+        font-size: 1.1rem;
+      }
+
+      .no-todos {
+        font-size: 1.3rem;
+      }
+    }
   </style>
 </head>
 
@@ -149,7 +231,7 @@
     function addTodo() {
       let input_val = document.querySelector('input');
       if (!input_val.value) return;
-      todos.push(input_val.value);
+      todos.push({ name: input_val.value, checked: false });
       input_val.value = '';
       localStorage.setItem('todos', JSON.stringify(todos));
       genTodoUI();
@@ -162,22 +244,61 @@
       let liHTML = '';
 
       todos.forEach((todo, index) => {
-        liHTML += `<li><input type="checkbox" data-index="${index}"><span>${todo}</span><button data-index="${index}">Delete</button></li>`;
+        liHTML += `<li><div class="block"><input type="checkbox" class="checkbox" ${todo.checked ? 'checked' : 'unchecked'}  data-index="${index}"><span>${todo.name}</span></div><button data-index="${index}">Delete</button></li>`;
       });
+
+      if (liHTML == '') {
+        liHTML = "<p class='no-todos'>No Todo's yet</p>";
+      }
 
       ulList.innerHTML = liHTML;
     }
 
-    document.querySelector('ul').addEventListener('click', (e) => {
-      if (e.target.textContent == "Delete") {
+    document.querySelector('.todos-section').addEventListener('click', (e) => {
+
+      if (e.target.classList.contains('checkbox')) {
         index = e.target.dataset.index;
+
+        todos[index].checked = !todos[index].checked;
+        localStorage.setItem('todos', JSON.stringify(todos));
+        genTodoUI();
+      }
+
+      if (e.target.textContent == "Delete") {
+        index = Number(e.target.dataset.index);
+
+        // let t2 = []
+        // for (let i = 0; i < todos.length; i++) {
+        //   if (i != index) t2.push(todos[i])
+        // }
+        // todos = t2;
         todos.splice(index, 1);
+
+        // console.log(todos)
+        // t1 = todos.slice(0, index).concat(todos.slice(index+1));
+        // console.log(t1)
+        // t2 = todos.slice(index+1)
+        // console.log(t1, t2)
+        // t3 = []
+        // t3 = [...t1, ...t2]
+        // console.log(t3)
+
+        // let t2 = todos.reduce( (t1, t3) => {
+        //   if(t3 != todos[index]){
+        //     t1.push(t3)
+        //   }
+        //   return t1;
+        // }, [])
+
+        // todos = t2
+
         localStorage.setItem('todos', JSON.stringify(todos));
         genTodoUI();
       } else {
         return;
       }
-    })
+
+    });
   </script>
 </body>
 
