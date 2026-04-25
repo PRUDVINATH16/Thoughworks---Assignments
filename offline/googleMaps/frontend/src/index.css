@@ -1,0 +1,149 @@
+:root {
+  --primary-blue: #007bff;
+  --bg-black: #08060d;
+  --text-white: #ffffff;
+  --border-gray: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-black);
+  color: var(--text-white);
+}
+
+main {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.form-container {
+  width: 350px;
+  padding: 40px 30px;
+  background-color: #000;
+  border-right: 1px solid var(--border-gray);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+}
+
+.form-labels {
+  margin-bottom: 20px;
+}
+
+.form-labels label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.form-labels input {
+  width: 100%;
+  padding: 12px;
+  background-color: #1a1a1a;
+  border: 1px solid var(--border-gray);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-labels input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+}
+
+.search-button {
+  padding: 14px;
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-button:hover {
+  opacity: 0.9;
+}
+
+.search-button:disabled {
+  background-color: #444;
+  cursor: not-allowed;
+}
+
+.map-container {
+  flex-grow: 1;
+  position: relative;
+  height: 100%;
+}
+
+.relocate-button {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  padding: 12px 24px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid var(--border-gray);
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s;
+}
+
+.relocate-button:hover {
+  transform: translateY(-2px);
+  background-color: #111;
+}
+
+#root {
+  width: 100%;
+}
+
+/* Leaflet Overrides */
+.leaflet-container {
+  background-color: #1a1a1a !important;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+}
+
+.leaflet-control-zoom-in, .leaflet-control-zoom-out {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-bottom: 1px solid var(--border-gray) !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(0,0,0,0.5) !important;
+  color: #888 !important;
+}
+
+.leaflet-control-attribution a {
+  color: var(--primary-blue) !important;
+}
